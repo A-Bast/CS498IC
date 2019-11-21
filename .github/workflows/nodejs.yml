@@ -8,16 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checking out most recent version of code
+      - name: Check out the most recent version of our code
         uses: actions/checkout@v1
 
-      - name: Using Node.js 10.x
+      - name: Setup both Node and NPM
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
 
-      - name: Clean npm install
+      - name: Install all of our dependencies
         run: npm ci
 
-      - name: Unit tests
+      - name: Run all of our Unit Tests
         run: npm test
